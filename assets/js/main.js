@@ -10,7 +10,7 @@ function isElementInViewport(el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-
+    
 // Función para detectar cuando un elemento está parcialmente visible
 function isElementPartiallyVisible(el) {
     const rect = el.getBoundingClientRect();
