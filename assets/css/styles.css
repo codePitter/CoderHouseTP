@@ -1,0 +1,909 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Contenedores de página */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.page-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    z-index: 2;
+}
+
+/* Fondos */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.bg-primary-light {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.bg-light {
+    background: #f8f9fa;
+}
+
+.bg-white {
+    background: #ffffff;
+}
+
+/* Tipografía */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #666;
+}
+
+.page-description {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+/* Página de portada */
+.brand-name {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.brand-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.95;
+    line-height: 1.8;
+}
+
+/* Tarjetas y secciones */
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card h3 {
+    color: #667eea;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Estrategias de Growth */
+.strategy-card {
+    background: rgba(255,255,255,0.95);
+    padding: 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.strategy-card:hover {
+    transform: translateY(-8px);
+}
+
+.strategy-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.strategy-card h3 {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Value Proposition Canvas */
+.canvas-section {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    height: 100%;
+    border-left: 4px solid #667eea;
+}
+
+.canvas-section h4 {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.canvas-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.canvas-section li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.canvas-section li::before {
+    content: "•";
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.value-prop-section {
+    background: #667eea;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.value-item {
+    background: rgba(255,255,255,0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Tabla de benchmark */
+.benchmark-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.benchmark-table th {
+    background: #667eea;
+    color: white;
+    font-weight: 600;
+    padding: 1.5rem 1rem;
+    border: none;
+}
+
+.benchmark-table td {
+    padding: 1.5rem 1rem;
+    border-color: #e9ecef;
+    vertical-align: middle;
+}
+
+/* Business Model Canvas */
+.canvas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.canvas-item {
+    background: rgba(255,255,255,0.95);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.canvas-central {
+    background: #667eea;
+    color: white;
+}
+
+.canvas-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.canvas-central h4 {
+    color: white;
+}
+
+/* North Star Metric */
+.metric-title {
+    color: #667eea;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.metric-description {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+.metric-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+    border-top: 4px solid #667eea;
+}
+
+.metric-card h4 {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Buyer Personas */
+.persona-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.persona-card:hover {
+    transform: translateY(-5px);
+}
+
+.persona-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.persona-avatar {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.persona-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.persona-details {
+    padding: 2rem;
+}
+
+.persona-details p {
+    margin-bottom: 1rem;
+}
+
+/* Buyer Journey */
+.journey-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.journey-step {
+    background: rgba(255,255,255,0.95);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.step-number {
+    background: #667eea;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+}
+
+.journey-step h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.journey-step ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.journey-step li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.journey-step li::before {
+    content: "→";
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Próximos pasos */
+.steps-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateX(10px);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+/* Estrategias combinadas */
+.strategy-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.strategy-section h3 {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Growth Loops */
+.loop-stage {
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.stage-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.loop-stage h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Métricas de Growth Loops */
+.metrics-stage {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    height: 100%;
+    position: relative;
+}
+
+.stage-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.metrics-list {
+    margin-top: 1.5rem;
+}
+
+.metrics-list h4 {
+    color: #667eea;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.metrics-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.metrics-list li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.metrics-list li::before {
+    content: "📊";
+    position: absolute;
+    left: 0;
+}
+
+/* Técnicas de Growth Marketing */
+.techniques-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.technique-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.technique-number {
+    background: #667eea;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.technique-card h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.example {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    border-left: 4px solid #667eea;
+}
+
+/* Métricas de crecimiento */
+.metrics-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.metrics-section h3 {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.metrics-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.metrics-section li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.95rem;
+}
+
+.metrics-section li:last-child {
+    border-bottom: none;
+}
+
+/* Email Marketing */
+.email-intro, .email-strategy {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.email-strategy h3 {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Ciclos de Email */
+.email-cycles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cycle-step {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.cycle-number {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.cycle-step h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cycle-details {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+/* Social Media */
+.social-strategy {
+    background: rgba(255,255,255,0.95);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.social-strategy h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.social-strategy ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-strategy li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.social-strategy li::before {
+    content: "✓";
+    color: #28a745;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Pilares de contenido */
+.content-pillar {
+    text-align: center;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.content-pillar:hover {
+    transform: translateY(-5px);
+}
+
+.pillar-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-pillar h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Acciones estratégicas */
+.action-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+}
+
+.action-card h3 {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Plataformas de anuncios */
+.platform-card {
+    background: rgba(255,255,255,0.95);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-5px);
+}
+
+.platform-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.platform-card h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Inversión publicitaria */
+.investment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.investment-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.investment-card:hover {
+    transform: translateY(-5px);
+}
+
+.investment-percentage {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.main-investment .investment-percentage {
+    color: #28a745;
+}
+
+.secondary-investment .investment-percentage {
+    color: #ffc107;
+}
+
+.tertiary-investment .investment-percentage {
+    color: #17a2b8;
+}
+
+.investment-card h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.investment-note {
+    background: rgba(255,255,255,0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* SEO y Landing Pages */
+.seo-section, .landing-section, .detailed-seo-section, .detailed-landing-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.seo-section h3, .landing-section h3, .detailed-seo-section h3, .detailed-landing-section h3 {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.seo-section ul, .landing-section ul, .detailed-seo-section ul, .detailed-landing-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.seo-section li, .landing-section li, .detailed-seo-section li, .detailed-landing-section li {
+    padding: 0.8rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.seo-section li::before, .landing-section li::before, .detailed-seo-section li::before, .detailed-landing-section li::before {
+    content: "🔍";
+    position: absolute;
+    left: 0;
+}
+
+/* Experimentos */
+.experiment-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.experiment-step {
+    background: rgba(255,255,255,0.95);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.experiment-step h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Análisis de experimentos */
+.analysis-stage {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+    text-align: center;
+}
+
+.analysis-stage h3 {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Reportes */
+.report-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 100%;
+    text-align: center;
+}
+
+.report-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.report-section h3 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Página final */
+.final-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.thanks-title {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-
